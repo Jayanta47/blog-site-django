@@ -1,0 +1,31 @@
+{% extends 'Blog/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="jumbotron" style="background-color: cornsilk; font-family: 'Bookman Old Style';">
+        <h2 align="center">User Registration Form</h2>
+    </div>
+    <div class="content-section" >
+        <form class="form-control" method="post">
+            {% csrf_token %}
+            <fieldset class="form-group" >
+                <legend class="border-bottom mb-4" align="center">JOIN HERE and NOW</legend>
+                <table class="table table-striped">
+                    {{ form.as_table}}
+                </table>
+            </fieldset>
+        <div class="form-group" style="margin-left: 45%">
+            <button class="btn btn-info" type="submit">Sign Up</button>
+        </div>
+
+        </form>
+        <div class="border-top pt-2">
+            <small class="text-muted" style="margin-left: 42%">
+            Already Have an Account? <a class="ml-2" href={% url 'login' %}>Sign In</a>
+            </small>
+        </div>
+
+    </div>
+
+{% endblock %}
+
