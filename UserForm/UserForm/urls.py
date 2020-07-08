@@ -18,9 +18,11 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
 from django.conf import settings
+from blog.views import PostListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', PostListView.as_view()),
     path('user/', include('User.urls')),
     path('blog/', include('blog.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='User/login.html'), name='login'),

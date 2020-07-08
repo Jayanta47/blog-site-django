@@ -1,0 +1,25 @@
+{% extends 'Blog/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="jumbotron" style="background-color: cornsilk; font-family: 'Bookman Old Style';">
+        <h2 align="center">Content Submission Form</h2>
+    </div>
+    <div class="content-section" >
+        <form class="form-control" method="post">
+            {% csrf_token %}
+            <fieldset class="form-group" >
+                <legend class="border-bottom mb-4" align="center">Post Your Blog Content From Here</legend>
+                    {{ form|crispy }}
+            </fieldset>
+        <div class="form-group" style="margin-left: 45%">
+            <button class="btn btn-info" type="submit">Post</button>
+        </div>
+
+        </form>
+
+
+    </div>
+
+{% endblock %}
+
