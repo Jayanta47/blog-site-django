@@ -9,6 +9,9 @@ urlpatterns = [
     path('post/new/', blog_views.PostCreateView.as_view(), name='post-create'),
     path('post/<int:pk>/update/', blog_views.PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', blog_views.PostDeleteView.as_view(), name='post-delete'),
+    path('user/<str:username>/', blog_views.UserPostListView.as_view(), name='user-posts'),
+    # the username is taken as key args
+
 ]
 
 # <app>/<model>_<viewtype>.html

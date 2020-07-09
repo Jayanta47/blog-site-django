@@ -34,7 +34,7 @@ def profile(request):
             p_form.save()
             messages.success(request, f'Your user account has been updated!')
             return redirect('user:profile')
-            #post get redirect pattern
+            # post get redirect pattern
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
