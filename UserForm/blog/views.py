@@ -97,3 +97,5 @@ def calender_today():
     date = datetime.today()
     date = str(date).split()[0] + " - " + weekdays[date.weekday()]
     return date
+
+
